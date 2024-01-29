@@ -13,18 +13,6 @@ import Bplus from '../assets/image/logo444.jpg'
 
 const Main = () => {
 	const [newSignature, setNewSignature] = useState(0)
-	const [imagesLoaded, setImagesLoaded] = useState(false)
-
-	const handleImagesLoad = () => {
-		setImagesLoaded(true)
-	}
-
-	const fakeImageLoad = () => {
-		// Имитация задержки загрузки на 5 секунд
-		setTimeout(() => {
-			handleImagesLoad()
-		}, 5000)
-	}
 	const handleRefresh = () => {
 		setNewSignature(prevNewSignature => prevNewSignature + 1)
 	}
@@ -422,7 +410,7 @@ const Main = () => {
 								width: '150px',
 								right: '250px',
 							}}>
-							<RandomSignature key={newSignature} onImagesLoad={handleImagesLoad} />
+							<RandomSignature key={newSignature}  />
 							{/* <img src={ images } alt='' /> */}
 						</div>
 					</p>
