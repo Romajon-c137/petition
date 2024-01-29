@@ -4,6 +4,7 @@ import { saveAs } from 'file-saver'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
 import ButtonGroup from '@mui/material/ButtonGroup'
+import RefreshIcon from '@mui/icons-material/Refresh'
 
 
 import './main.css'
@@ -69,21 +70,18 @@ const Main = () => {
 		setBirth(event.target.value)
 	}
 
+  const R
+
 	return (
 		<>
 			<div className='containerr'>
-        among uss
 				<div className='left'>
 					<div className='left_container'>
-						<TextField
-							id='outlined-basic'
-							type='name'
-							label='Имя'
-							variant='outlined'
-							value={Name}
-							onChange={handleName}
-							autoComplete='given-name'
-						/>
+            <div className="restBtn">
+						<Button variant='contained' style={{ marginLeft: 'auto' , marginRight: '0px'}}>
+							<RefreshIcon />
+						</Button>
+            </div>
 						<TextField
 							id='outlined-basic'
 							label='Фамилия'
@@ -92,6 +90,15 @@ const Main = () => {
 							value={LastName}
 							onChange={handleLastName}
 							autoComplete='family-name'
+						/>
+						<TextField
+							id='outlined-basic'
+							type='name'
+							label='Имя'
+							variant='outlined'
+							value={Name}
+							onChange={handleName}
+							autoComplete='given-name'
 						/>
 						<TextField
 							id='outlined-basic'

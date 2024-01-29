@@ -67,6 +67,7 @@ div.WordSection1 {
   }
   
   .left_container{
+    position: relative;
     width: 350px;
     background-color: #fff;
     display: flex;
@@ -75,5 +76,10 @@ div.WordSection1 {
     box-shadow:  0 0 10px #00000047;
     border-radius: 10px;
     row-gap: 20px;
+}
+.restBtn{
+  position: absolute;
+  right: -10px;
+  top: -10px;
 }
 
