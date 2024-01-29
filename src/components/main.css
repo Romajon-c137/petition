@@ -64,9 +64,11 @@ div.WordSection1 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
   }
   
   .left_container{
+    position: relative;
     width: 350px;
     background-color: #fff;
     display: flex;
@@ -75,5 +77,33 @@ div.WordSection1 {
     box-shadow:  0 0 10px #00000047;
     border-radius: 10px;
     row-gap: 20px;
+  }
+  .restBtn{
+    position: absolute;
+    right: -10px;
+    top: -10px;
+  }
+  
+  
+  .Bplus{
+    display: flex; 
+    position: absolute;
+    left: auto;
+    right: auto;
+    top: 150px;
+    box-shadow:  0 0 10px #00000047;
+    border-radius: 10px;
+    background-color: #fff;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 15px;
+    align-items: center;
+    columns: 20px;
+    
+  }
+  
+  .Bplus img{
+    width: 200px;
+    margin-left: 10px;
 }
-

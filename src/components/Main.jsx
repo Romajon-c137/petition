@@ -4,20 +4,31 @@ import { saveAs } from 'file-saver'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
 import ButtonGroup from '@mui/material/ButtonGroup'
-
+import RefreshIcon from '@mui/icons-material/Refresh'
 
 import './main.css'
 import TodaysDate from './TodaysDate'
 import RandomSignature from './RandomSignature'
-// import DateInput from './DateInput'
-// import images from ''
+import Bplus from '../assets/image/logo444.jpg'
 
 const Main = () => {
 	const [newSignature, setNewSignature] = useState(0)
+	const [imagesLoaded, setImagesLoaded] = useState(false)
 
+	const handleImagesLoad = () => {
+		setImagesLoaded(true)
+	}
+
+	const fakeImageLoad = () => {
+		// Имитация задержки загрузки на 5 секунд
+		setTimeout(() => {
+			handleImagesLoad()
+		}, 5000)
+	}
 	const handleRefresh = () => {
 		setNewSignature(prevNewSignature => prevNewSignature + 1)
 	}
+
 	const commonCellStyle = {
 		fontSize: '14pt',
 		fontFamily: "'Times New Roman', serif",
@@ -69,21 +80,29 @@ const Main = () => {
 		setBirth(event.target.value)
 	}
 
+	const RestState = () => {
+		setName('')
+		setLastName('')
+		setFinNumber('')
+		setBirth('')
+	}
+
 	return (
 		<>
 			<div className='containerr'>
-        among uss
 				<div className='left'>
+					<div className='Bplus'>
+						Разработана <br /> компанией: <img src={Bplus} alt='' />
+					</div>
 					<div className='left_container'>
-						<TextField
-							id='outlined-basic'
-							type='name'
-							label='Имя'
-							variant='outlined'
-							value={Name}
-							onChange={handleName}
-							autoComplete='given-name'
-						/>
+						<div className='restBtn'>
+							<Button
+								variant='contained'
+								style={{ marginLeft: 'auto', marginRight: '0px' }}
+								onClick={RestState}>
+								<RefreshIcon />
+							</Button>
+						</div>
 						<TextField
 							id='outlined-basic'
 							label='Фамилия'
@@ -92,6 +111,15 @@ const Main = () => {
 							value={LastName}
 							onChange={handleLastName}
 							autoComplete='family-name'
+						/>
+						<TextField
+							id='outlined-basic'
+							type='name'
+							label='Имя'
+							variant='outlined'
+							value={Name}
+							onChange={handleName}
+							autoComplete='given-name'
 						/>
 						<TextField
 							id='outlined-basic'
@@ -394,12 +422,21 @@ const Main = () => {
 								width: '150px',
 								right: '250px',
 							}}>
-							<RandomSignature key={newSignature} />
+							<RandomSignature key={newSignature} onImagesLoad={handleImagesLoad} />
 							{/* <img src={ images } alt='' /> */}
 						</div>
 					</p>
 				</div>
 			</div>
+			<p
+				style={{
+					textAlign: 'center',
+					fontFamily: 'Arial, Helvetica Neue, Helvetica, sans-serif',
+					fontSize: '12px',
+					color: '#ffffff',
+				}}>
+				©2024 Editor of the petition
+			</p>
 		</>
 	)
 }
