@@ -75,6 +75,13 @@ const Main = () => {
 		setBirth('')
 	}
 
+    const trimSpaces = () => {
+			setName(prevName => prevName.trim())
+			setLastName(prevLastName => prevLastName.trim())
+			setFinNumber(prevFinNumber => prevFinNumber.trim())
+			setBirth(prevBirth => prevBirth.trim())
+		}
+
 	return (
 		<>
 			<div className='containerr'>
@@ -99,6 +106,7 @@ const Main = () => {
 							value={LastName}
 							onChange={handleLastName}
 							autoComplete='family-name'
+							onBlur={trimSpaces}
 						/>
 						<TextField
 							id='outlined-basic'
@@ -108,6 +116,7 @@ const Main = () => {
 							value={Name}
 							onChange={handleName}
 							autoComplete='given-name'
+							onBlur={trimSpaces}
 						/>
 						<TextField
 							id='outlined-basic'
@@ -116,6 +125,7 @@ const Main = () => {
 							type='data'
 							value={Birth}
 							onChange={handleBirth}
+							onBlur={trimSpaces}
 						/>
 
 						<div
@@ -134,6 +144,7 @@ const Main = () => {
 								type='number'
 								value={FinNumber}
 								onChange={handleFinNumber}
+								onBlur={trimSpaces}
 							/>
 						</div>
 						<ButtonGroup
@@ -338,15 +349,8 @@ const Main = () => {
 								lineHeight: '107%',
 								fontFamily: "'Times New Roman', serif",
 							}}>
-							{Name}{' '}
-						</span>
-						<span
-							lang='EN-US'
-							style={{
-								fontSize: '14pt',
-								lineHeight: '107%',
-								fontFamily: "'Times New Roman', serif",
-							}}></span>
+							{Name.toUpperCase()}
+						</span>{' '}
 						<span
 							lang='EN-US'
 							style={{
@@ -355,7 +359,7 @@ const Main = () => {
 								fontFamily: "'Times New Roman', serif",
 								textTransform: 'uppercase',
 							}}>
-							{LastName}{' '}
+							{LastName.toUpperCase()}{' '}
 						</span>
 						<span
 							lang='EN-US'
@@ -370,6 +374,7 @@ const Main = () => {
 								lineHeight: '107%',
 								fontFamily: "'Times New Roman', serif",
 							}}>
+							{' '}
 							гарантирует обеспечить свое пребывание в Кыргызской Республике в соответствии с
 							Законом КР «О внешней миграции» №61 от 17.07.2000 года, с обязательным соблюдением
 							общественного порядка.
@@ -410,7 +415,7 @@ const Main = () => {
 								width: '150px',
 								right: '250px',
 							}}>
-							<RandomSignature key={newSignature}  />
+							<RandomSignature key={newSignature} />
 							{/* <img src={ images } alt='' /> */}
 						</div>
 					</p>
