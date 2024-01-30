@@ -5,6 +5,10 @@ import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
 import ButtonGroup from '@mui/material/ButtonGroup'
 import RefreshIcon from '@mui/icons-material/Refresh'
+import InputLabel from '@mui/material/InputLabel'
+import MenuItem from '@mui/material/MenuItem'
+import FormControl from '@mui/material/FormControl'
+import Select, { SelectChangeEvent } from '@mui/material/Select'
 
 import './main.css'
 import TodaysDate from './TodaysDate'
@@ -67,6 +71,11 @@ const Main = () => {
 	const handleBirth = event => {
 		setBirth(event.target.value)
 	}
+	const [FinType, setFinType] = useState('FA')
+
+	const handleFinType = event => {
+		setFinType(event.target.value)
+	}
 
 	const RestState = () => {
 		setName('')
@@ -75,12 +84,12 @@ const Main = () => {
 		setBirth('')
 	}
 
-    const trimSpaces = () => {
-			setName(prevName => prevName.trim())
-			setLastName(prevLastName => prevLastName.trim())
-			setFinNumber(prevFinNumber => prevFinNumber.trim())
-			setBirth(prevBirth => prevBirth.trim())
-		}
+	const trimSpaces = () => {
+		setName(prevName => prevName.trim())
+		setLastName(prevLastName => prevLastName.trim())
+		setFinNumber(prevFinNumber => prevFinNumber.trim())
+		setBirth(prevBirth => prevBirth.trim())
+	}
 
 	return (
 		<>
@@ -133,9 +142,27 @@ const Main = () => {
 								display: 'flex',
 								alignItems: 'center',
 								width: '100%',
-								fontFamily: ' Arial, "Helvetica Neue", Helvetica, sans-serif',
+								fontFamily: 'Arial, "Helvetica Neue", Helvetica, sans-serif',
 							}}>
-							FA
+							<FormControl fullWidth>
+								<InputLabel id='demo-simple-select-label'>ФИН номер</InputLabel>
+								<Select
+									labelId='demo-simple-select-label'
+									id='demo-simple-select'
+									label='ФИН номер'
+									value={FinType}
+									onChange={handleFinType}>
+									<MenuItem value='FA'>FA</MenuItem>
+									<MenuItem value='FN'>FN</MenuItem>
+								</Select>
+							</FormControl>
+							{/* <select
+								value={FinType}
+								onChange={handleFinType}
+								style={{ marginRight: '10px', padding: '5px', fontSize: '14px' }}>
+								<option value='FA'>FA</option>
+								<option value='FN'>FN</option>
+							</select> */}
 							<TextField
 								style={{ width: '100%' }}
 								id='outlined-basic'
@@ -287,7 +314,7 @@ const Main = () => {
 						</tr>
 						<tr>
 							{[
-								`${Name.toUpperCase()} ${LastName.toUpperCase()}`,
+								`${LastName.toUpperCase()} ${Name.toUpperCase()}`,
 								'UZBEKISTAN',
 								`FA${FinNumber}`,
 								`${Birth}`,
@@ -307,7 +334,9 @@ const Main = () => {
 									<p
 										className='MsoNormal'
 										style={{ margin: '0cm', textAlign: 'justify', lineHeight: 'normal' }}>
-										<span style={commonCellStyle}>{data}</span>
+										<span style={commonCellStyle}>
+											{index === 2 ? `${FinType}${FinNumber}` : data}
+										</span>
 									</p>
 								</td>
 							))}
