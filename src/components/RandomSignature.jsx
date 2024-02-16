@@ -1,9 +1,24 @@
-import React, { memo } from 'react'
-const RandomSignature = () => {
-	const randomIndex = Math.floor(Math.random() * 15) + 1
-	const imageUrl = require(`../assets/image/signature${randomIndex}.jpg`)
+import React, { useState, useEffect } from 'react'
+import CircularProgress from '@mui/material/CircularProgress'
 
-	return <img src={imageUrl} alt='Random Signature' style={{ width: '100%' }} />
+const RandomSignature = () => {
+	const randomIndex = Math.floor(Math.random() * 34) + 1
+	const imageUrl = require(`../assets/image/signature${randomIndex}.jpg`)
+	const [loaded, setLoaded] = useState(false)
+
+	useEffect(() => {
+		const img = new Image()
+		img.src = imageUrl
+		img.onload = () => setLoaded(true)
+	}, [imageUrl])
+
+	return loaded ? (
+		<img src={imageUrl} alt='Random Signature' style={{ width: '100%' }} />
+	) : (
+		<div className='LoaderSignature'>
+			<CircularProgress />
+		</div>
+	)
 }
 
-export default memo(RandomSignature)
+export default RandomSignature

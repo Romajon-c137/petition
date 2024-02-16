@@ -1,4 +1,3 @@
-
 @font-face {
 	font-family: 'Cambria Math';
 	panose-1: 2 4 5 3 5 4 6 3 2 4;
@@ -33,77 +32,84 @@ div.WordSection1 {
 	page: WordSection1;
 }
 .WordSection1 {
-  max-width: 835px;
+	max-width: 835px;
 	width: 695px;
 	height: 942px;
 	padding: 70px;
-  background-color: #fff;
-  /* border: 2px solid #000; */
-   box-shadow:  0 0 10px #00000047;
-   transform: scale(0.9);
-  }
-  /* .MsoTableGrid {
+	background-color: #fff;
+	/* border: 2px solid #000; */
+	box-shadow: 0 0 10px #00000047;
+	transform: scale(0.9);
+}
+/* .MsoTableGrid {
     margin: 0 auto;
   } */
-  imput::-ms-value{
-    text-transform: uppercase;
-  }
-  
-  body{
-    background-color: rgb(152, 193, 236);
-  }
-  
-  .containerr{
-    width: 100%;
-    display: flex;
-    /* flex-direction: row-reverse; */
-  } 
-  .left{
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-  }
-  
-  .left_container{
-    position: relative;
-    width: 350px;
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    padding: 30px;
-    box-shadow:  0 0 10px #00000047;
-    border-radius: 10px;
-    row-gap: 20px;
-  }
-  .restBtn{
-    position: absolute;
-    right: -10px;
-    top: -10px;
-  }
-  
-  
-  .Bplus{
-    display: flex; 
-    position: absolute;
-    left: auto;
-    right: auto;
-    top: 150px;
-    box-shadow:  0 0 10px #00000047;
-    border-radius: 10px;
-    background-color: #fff;
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-    font-size: 20px;
-    font-weight: bold;
-    padding: 15px;
-    align-items: center;
-    columns: 20px;
-    
-  }
-  
-  .Bplus img{
-    width: 200px;
-    margin-left: 10px;
+imput::-ms-value {
+	text-transform: uppercase;
+}
+
+body {
+	background-color: rgb(152, 193, 236);
+}
+
+.containerr {
+	width: 100%;
+	display: flex;
+	/* flex-direction: row-reverse; */
+}
+.left {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+
+.left_container {
+	position: relative;
+	width: 350px;
+	background-color: #fff;
+	display: flex;
+	flex-direction: column;
+	padding: 30px;
+	box-shadow: 0 0 10px #00000047;
+	border-radius: 10px;
+	row-gap: 20px;
+}
+.restBtn {
+	position: absolute;
+	right: -10px;
+	top: -10px;
+}
+
+.Bplus {
+	display: flex;
+	position: absolute;
+	left: auto;
+	right: auto;
+	top: 150px;
+	box-shadow: 0 0 10px #00000047;
+	border-radius: 10px;
+	background-color: #fff;
+	font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+	padding: 15px;
+	align-items: center;
+	columns: 20px;
+}
+
+.Bplus img {
+	width: 200px;
+	margin-left: 10px;
+}
+
+.LoaderSignature {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 150px;
+	height: 150px;
 }
