@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react'
 import CircularProgress from '@mui/material/CircularProgress'
 
 const RandomSignature = () => {
-	const randomIndex = Math.floor(Math.random() * 34) + 1
-	const imageUrl = require(`../assets/image/signature${randomIndex}.jpg`)
+	const randomIndex = Math.floor(Math.random() * 12) + 1
+	const imageUrl = require(`../assets/image/signature${randomIndex}.png`)
 	const [loaded, setLoaded] = useState(false)
 
 	useEffect(() => {
