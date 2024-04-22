@@ -369,7 +369,7 @@ const Main = () => {
 								lineHeight: '107%',
 								fontFamily: "'Times New Roman', serif",
 							}}>
-							Индивидуальный предприниматель рынка{' '}
+							Индивидуальный предприниматель{' '}
 						</span>
 						<span
 							lang='EN-US'
